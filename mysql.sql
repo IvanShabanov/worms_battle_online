@@ -23,6 +23,17 @@ CREATE TABLE IF NOT EXISTS `gamers_status` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Экспортируемые данные не выделены.
+-- Дамп структуры для таблица worm_battle.objects
+DROP TABLE IF EXISTS `objects`;
+CREATE TABLE IF NOT EXISTS `objects` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_type` int(11) NOT NULL DEFAULT '0',
+  `posX` int(11) NOT NULL DEFAULT '0',
+  `posY` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- Экспортируемые данные не выделены.
 -- Дамп структуры для таблица worm_battle.user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
@@ -41,7 +52,9 @@ CREATE TABLE IF NOT EXISTS `user_param` (
   `ID_user` int(11) NOT NULL,
   `ID_param` int(11) NOT NULL,
   `value` text NOT NULL,
-  PRIMARY KEY (`ID`)
+  PRIMARY KEY (`ID`),
+  KEY `ID_user` (`ID_user`),
+  KEY `ID_param` (`ID_param`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Экспортируемые данные не выделены.

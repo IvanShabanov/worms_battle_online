@@ -4,4 +4,5 @@ $setting = array(
     'dbuser' => 'root',
     'dbpass' => '',
     'dbname' => 'worm_battle',
+    'takt'  => '0.01',
 );
